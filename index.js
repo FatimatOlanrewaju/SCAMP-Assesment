@@ -1,16 +1,21 @@
 const fibonacci = (num) => {
-    if (num <= 0) {
-      return 'Input number greater than or equal to 1';
-    }
+
     if (typeof num != "number") {
       return "Input a number";
     }
+
+    if (num <= 0) {
+      return 'Input number greater than or equal to 1';
+    }
+
     if (num === 1) {
         return 0;
     }
+
     if (num === 2) {
         return 1;
     }
+    
     // Since the sequence starts from 0 and 1
     let a = 0;
     let b = 1;
