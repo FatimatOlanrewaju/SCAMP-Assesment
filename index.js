@@ -1,14 +1,30 @@
-let fibonacci = (num) => {
-    // Since the sequence starts from 0 and 1
+const fibonacci = (num) => {
+    if (num <= 0) {
+      return 'Input number greater than or equal to 1';
+    }
+    if (typeof num != "number") {
+      return "Input a number";
+    }
     if (num === 1) {
-        return [0, 1];
+        return 0;
     }
-    else {
-        let series = fibonacci(num - 1);
-        let i = series.length;
-        series.push(series[i - 1] + series[i - 2]);
-        return series;
+    if (num === 2) {
+        return 1;
     }
-};
+    // Since the sequence starts from 0 and 1
+    let a = 0;
+    let b = 1;
+    let c;
+    let i = 2;
+
+    while (i < num) {
+        let c = a + b;
+        a = b;
+        b = c;
+        i++;
+    }
+    return b;
+}
+
 // Sample
 console.log(fibonacci(5));
